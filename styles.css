@@ -1,0 +1,274 @@
+body{
+    margin: 0;
+    padding: 24px;
+    background-color: darkgoldenrod;
+    color: green;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+main{
+    max-width: 700px;
+    margin: auto;
+}
+section{
+    margin-bottom: 20px;
+    padding: 24px;
+    background-color: rgb(38, 72, 153);
+    border-radius: 16px;
+}
+h2{
+    margin-top: 0;
+    font-size: 28px;
+}
+.shape{
+    width: 70px;
+    height: 70px;
+    background: red;
+    border-radius: 12px;
+}
+
+.ball{
+    border-radius: 50%;
+
+    animation: move 4s ease-in-out infinite alternate;
+}
+@keyframes move {
+    from{
+        transform: translateX(0);
+
+    }to{
+        transform: translateX(600px);
+    }
+}
+
+.box{
+    animation: change 3s linear infinite;
+}
+@keyframes change {
+    0%,100%{
+        background-color: purple;
+        transform: scale(1);
+    }50%{
+        background-color: tomato;
+        transform: scale(1.21);
+    }
+}
+.text{
+    font-size: 40px;
+    font-weight: bolder;
+    animation: gamochena  1.5s ease-in-out 1s infinite;
+}
+
+@keyframes gamochena {
+    from{
+        opacity: 0;
+        transform: translateX(40px);
+    }to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.loader{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 7px solid black;
+    border-top-color: white;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+    
+}
+.pulse{
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    background-color: chartreuse;
+
+    animation: pulse  1.5s ease-out infinite;
+}
+@keyframes pulse {
+    0%,100%{
+        transform: scale(1);
+    }50%{
+        transform: scale(1.09);
+    }
+    
+}
+.pulse:hover,
+.pulse:focus-visible{
+    animation-play-state: paused;
+
+}
+.double{
+    background-color: brown;
+    border-radius: 50%;
+   
+    animation: move 3s  linear infinite alternate,
+    fade 1s ease-in-out infinite alternate;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0.30;
+    }to{
+        opacity: 1;
+    }
+}
+.stage{
+    height: 140px;
+    display:flex ;
+    align-items: flex-end;
+    border-bottom: 3px solid darkgreen;
+}
+.bounce-ball{
+    border-radius: 50%;
+
+    animation: bounce 1s ease-out infinite;
+}
+@keyframes bounce {
+    0%,100%{
+        transform: translateY(0);
+    }50%{
+        transform: translateY(-100px);
+    }
+    
+}
+.shake-button{
+    padding: 14px 25px;
+    border: 0;
+    border-radius: 10px;
+    background: gray;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+.shake-button:hover,
+.shake-button:focus-visible{
+    animation: shake 0.5s linear;
+}
+@keyframes shake {
+    0%,100%{
+        transform: translateX(0);
+    }20%,60%{
+        transform: translateX(-10px);
+    }
+}
+.form-change{
+    animation: form 4s  ease-in-out infinite;
+}
+@keyframes form {
+    0%,100%{
+        border-radius: 0;
+        background-color: rgb(255, 0, 179);
+        transform: rotate(0deg);
+        transform: translateY(-70px);
+    }25%{
+        transform: translateX(200px);
+    }50%{
+        border-radius: 35px;
+        background-color: rgb(0, 251, 255);
+        transform: rotate(180deg);
+        transform: translateY(-70px);
+    }75%{
+        transform: translateY(-70px);
+    }
+    
+}
+.flip-scene{
+    perspective: 200px;
+}
+.flip-card{
+    width: 150px;
+    height: 80px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background-color: aquamarine;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 200px;
+
+    animation: flip 4s ease-in-out infinite;
+}
+@keyframes flip {
+    0%,100%{
+        transform: rotateY(0deg);
+    }50%{
+        transform: rotateY(360deg);
+    }
+    
+}
+.flip-card:hover,
+.flip-card:focus-visible{
+    animation-play-state: paused;
+
+}
+.gradient-box{
+    padding: 40px 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: aliceblue;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        red,
+        yellow,
+        green
+    );
+    background-size: 300% 100%;
+
+    animation:  gradientMove 5s ease-in-out infinite;
+}
+.gradient-box:hover,
+.gradient-box:focus-visible{
+    animation-play-state: paused;
+
+}
+
+@keyframes gradientMove {
+    0%,100%{
+        background-position: 0% 50%;
+    }50%{
+        background-position: 100% 50%;
+    }
+}
+
+.dots{
+    display: flex;
+    gap: 12px;
+    padding: 20px 0;
+}
+.dots span{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: blue;
+
+    animation: jump 1.2s ease-in-out infinite;
+}
+.dots span:nth-child(2){
+    animation-delay: 0.2s;
+}
+.dots span:nth-child(3){
+    animation-delay: 0.4s;
+}
+@keyframes jump {
+    0%,60%,100%{
+        transform: translateY(0);
+    }30%{
+        transform: translateY(-20px);
+    }
+}
